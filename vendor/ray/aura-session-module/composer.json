@@ -1,0 +1,20 @@
+{
+    "name": "ray/aura-session-module",
+    "description":"Aura Session module for Ray.Di",
+    "keywords":[
+        "Ray.Di",
+        "aura",
+        "session"
+    ],
+    "require": {
+        "ray/di": "~2.0",
+        "aura/session": "~2.0",
+        "ircmaxell/random-lib": "^1.1"
+    },
+    "license": "MIT",
+    "autoload":{
+        "psr-4":{
+            "Ray\\AuraSessionModule\\": "src/"
+        }
+    }
+}

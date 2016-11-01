@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <a href="/messages/new">新規投稿</a>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>タイトル</td>
+            <td>投稿者</td>
+            <td>コメント</td>
+            <td></td>
+        </tr>
+        {% for message in messages %}
+            <tr>
+                <td><a href="/messages/{{ message.id }}/edit">{{ message.id }}</a></td>
+                <td>{{ message.title }}</td>
+                <td>{{ message.author }}</td>
+                <td>{{ message.comment }}</td>
+                <td><a href="/messages/{{ message.id }}/delete">削除</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

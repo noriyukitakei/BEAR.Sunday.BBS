@@ -1,0 +1,7 @@
+{% if action == 'new' %}
+    {% include 'MessageNew.html.twig' %}
+{% elseif action == 'edit' %}
+    {% include 'MessageEdit.html.twig' %}
+{% elseif action == 'list' %}
+    {% include 'MessageList.html.twig' %}
+{% endif %}

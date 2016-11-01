@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+ログイン画面<p>
+    {% for value in login_form.errors %}
+        {{value}}<br>
+    {% endfor %}
+    <form method="post" action="/login">
+      <table border="0">
+        <tr>
+          <td>ID</td><td>{{login_form.input('id')|raw }}</td>
+        </tr>
+        <tr>
+          <td>パスワード</td><td>{{login_form.input('password')|raw }}</td>
+        </tr>
+      </table>
+      <p>
+      {{login_form.input('submit')|raw }}
+    </form>
+{% endblock %}

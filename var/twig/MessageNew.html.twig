@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+新規投稿画面
+    {% for value in message_form.errors %}
+        {{value}}<br>
+    {% endfor %}
+    <form method="post" action="/messages/new" enctype="multipart/form-data">
+      タイトル<br>
+      {{message_form.input('title')|raw }}<p>
+      投稿者<br>
+      {{message_form.input('author')|raw }}<p>
+      コメント<br>
+      {{message_form.input('comment')|raw }}<p>
+      {{message_form.input('id')|raw }}<br>
+      {{message_form.input('submit')|raw }}
+    </form>
+{% endblock %}

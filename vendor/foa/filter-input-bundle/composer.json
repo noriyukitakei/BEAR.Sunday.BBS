@@ -1,0 +1,38 @@
+{
+    "name": "foa/filter-input-bundle",
+    "type": "library",
+    "description": "Integration bundle for Aura.Input with Aura.Filter",
+    "keywords": [ "filter", "validate", "sanitize", "form", "input" ],
+    "homepage": "https://github.com/friendsofaura/FOA.Filter_Input_Bundle",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "FOA Contributors",
+            "homepage": "https://github.com/friendsofaura/FOA.Filter_Input_Bundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "aura/input": ">=1.1.1,<=2.0.0",
+        "aura/filter": ">=1.0.1,<=2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FOA\\Filter_Input_Bundle\\": "src/",
+            "FOA\\Filter_Input_Bundle\\_Config\\": "config/"
+        }
+    },
+    "extra": {
+        "aura": {
+            "type": "bundle",
+            "config": {
+                "common": [
+                    "FOA\\Filter_Input_Bundle\\_Config\\Common"
+                ]
+            }
+        },
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
+    }
+}

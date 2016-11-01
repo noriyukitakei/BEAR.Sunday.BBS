@@ -1,0 +1,26 @@
+{
+    "name": "bear/app-meta",
+    "description":"BEAR.Sunday application meta information",
+    "keywords":[
+        "BEAR.Sunday"
+    ],
+    "license": "MIT",
+    "autoload":{
+        "psr-4":{
+            "BEAR\\AppMeta\\": "src/"
+        }
+    },
+    "autoload-dev":{
+        "psr-4":{
+            "BEAR\\AppMeta\\": "tests/",
+            "BEAR\\AppMeta\\": "tests/Fake",
+            "FakeVendor\\HelloWorld\\": "tests/Fake/fake-app/src"
+        }
+    },
+    "require": {
+        "koriym/psr4list": "~1.0"
+    },
+    "require-dev": {
+      "bear/resource": "~1.0"
+    }
+}

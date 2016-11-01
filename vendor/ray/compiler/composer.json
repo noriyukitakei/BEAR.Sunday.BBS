@@ -1,0 +1,29 @@
+{
+    "name": "ray/compiler",
+    "description": "A dependency injection compiler for Ray.Di",
+    "keywords": [
+        "Ray.Di",
+        "compiler",
+        "code-gen"
+    ],
+    "license": "MIT",
+    "require-dev": {
+        "ray/di": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ray\\Compiler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ray\\Compiler\\": [
+                "tests/",
+                "tests/Fake"
+            ]
+        }
+    },
+    "require": {
+        "koriym/printo": "~1.0"
+    }
+}

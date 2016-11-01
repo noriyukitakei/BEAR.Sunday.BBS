@@ -1,0 +1,57 @@
+{
+    "name": "ray/di",
+    "description": "Guice style annotation-driven dependency injection framework",
+    "keywords": [
+        "ray",
+        "di",
+        "aop",
+        "annotations",
+        "guice"
+    ],
+    "homepage": "https://github.com/ray-di/Ray.Di",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Akihito Koriyama",
+            "email": "akihito.koriyama@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "ray/aop": "~2.4",
+        "ray/compiler": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ray\\Di\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ray\\Di\\": [
+                "tests/",
+                "tests/Fake/"
+            ],
+            "FakeVendor\\Sandbox\\": "tests/Fake/FakeVendor/Sandbox/"
+        }
+    },
+    "scripts" :{
+        "test": [
+        "phpmd src text ./phpmd.xml",
+        "phpcs src tests",
+        "phpunit"
+        ],
+    "cs-fix": [
+        "php-cs-fixer fix --config-file=./.php_cs",
+        "phpcbf src"
+      ],
+    "build": [
+        "rm -rf ./build; mkdir -p ./build/logs ./build/pdepend ./build/api",
+        "pdepend --jdepend-xml=./build/logs/jdepend.xml --jdepend-chart=./build/pdepend/dependencies.svg --overview-pyramid=./build/pdepend/overview-pyramid.svg src",
+        "phploc --log-csv ./build/logs/phploc.csv src",
+        "phpcs --report=checkstyle --report-file=./build/logs/checkstyle.xml --standard=phpcs.xml src",
+        "apigen generate -s src -d build/api",
+        "@test"
+      ]
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "bear/query-repository",
+    "description": "Resource query responsibility segregation",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Akihito Koriyama",
+            "email": "akihito.koriyama@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "bear/resource": "~1.2",
+        "mobiledetect/mobiledetectlib": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BEAR\\QueryRepository\\": "src/",
+            "BEAR\\RepositoryModule\\Annotation\\": "src-annotation/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BEAR\\QueryRepository\\": [
+                "tests/",
+                "tests/Fake/"
+            ],
+            "FakeVendor\\HelloWorld\\": "tests/Fake/fake-app/src"
+        }
+    }
+}
